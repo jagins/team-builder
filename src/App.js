@@ -4,7 +4,7 @@ import './App.css';
 
 function App() 
 {
-  const [teamMemberList, setTeamMemberList] = useState([
+  const [teamMember, setTeamMember] = useState([
     {
       id: 0,
       name: '',
@@ -12,9 +12,22 @@ function App()
       role: ''
     }
   ]);
+
+  const addNewTeamMember = tm =>
+  {
+    const newTeamMember = {
+      id: Date.now(),
+      name: tm.name,
+      email: tm.email,
+      role: tm.role
+    };
+
+    setTeamMember([...teamMember, newTeamMember]);
+  };
   return (
     <div className="App">
-      <Form />
+      <h1>My Team</h1>
+      <Form addNewTeamMember={addNewTeamMember}/>
     </div>
   );
 }
