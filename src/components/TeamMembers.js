@@ -1,7 +1,8 @@
 import React from 'react';
 
 function TeamMembers(props) 
-{ 
+{   
+    //the teamMember card
     return (
         <div className='team-list'>
             {props.teamMembers.map(tm => (

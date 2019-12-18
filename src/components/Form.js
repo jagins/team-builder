@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 
-function Form(props) {
+function Form(props) 
+{
+    //set the local state to blank
     const [teamMember, setTeamMember] = useState({
         name: '',
         email: '',
         role: ''
     });
 
+    //fires when change in the text box has been detected
     const handleChange = event => 
     {
+        //setting the state of the teamMember to which ever the user has typed in
         setTeamMember({...teamMember, [event.target.id]: event.target.value});
     }
 
+    //fires when the submit button has been clicked and calls the function to add to the list
+    //text fields reset back to blank
     const submitForm = event => 
     {
         event.preventDefault();
@@ -22,6 +28,7 @@ function Form(props) {
             role: ''
         });
     }
+    //renders the form and submit button
     return (
         <form onSubmit={submitForm}>
             <label htmlFor='name'>Name</label>
