@@ -1,15 +1,15 @@
 import React from 'react';
 
-function TeamMembers(props)
-{
-    return(
-    <div className='team-list'>
-        <div className='team-member' key=''>
-            <h2>Name</h2>
-            <p>Email</p>
-            <p>Role</p>
-        </div>
-    </div>
+function TeamMembers(props) {
+    return (
+        <div className='team-list'>
+            {props.teamMembers.map(tm => (
+                <div className='team-member' key={tm.id}>
+                    <h2>{tm.name}</h2>
+                    <p>{tm.email}</p>
+                    <p>{tm.role}</p>
+                </div>))}
+        </div >
     );
 }
 
