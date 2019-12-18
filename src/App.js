@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Form from './Components/Form';
+import TeamMembers from './Components/TeamMembers';
 import './App.css';
 
-function App() 
-{
+function App() {
   const [teamMember, setTeamMember] = useState([
     {
       id: 0,
@@ -13,8 +13,7 @@ function App()
     }
   ]);
 
-  const addNewTeamMember = tm =>
-  {
+  const addNewTeamMember = tm => {
     const newTeamMember = {
       id: Date.now(),
       name: tm.name,
@@ -27,7 +26,8 @@ function App()
   return (
     <div className="App">
       <h1>My Team</h1>
-      <Form addNewTeamMember={addNewTeamMember}/>
+      <Form addNewTeamMember={addNewTeamMember} />
+      <TeamMembers teamMembers={teamMember}/>
     </div>
   );
 }
