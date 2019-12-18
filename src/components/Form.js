@@ -36,14 +36,14 @@ function Form(props) {
                 id='email'
                 type='email'
                 onChange={handleChange}
-                value={teamMember.name} />
+                value={teamMember.email} />
            
             <label htmlFor='role'>Role</label>
             <input 
                 id='role'
                 type='text'
                 onChange={handleChange}
-                value={teamMember.name} />
+                value={teamMember.role} />
             
             <button type='submit'>Add Team Member</button>
         </form>
