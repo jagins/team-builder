@@ -10,8 +10,12 @@ function Form() {
     const handleChange = event => {
 
     }
+
+    const submitForm = event => {
+
+    }
     return (
-        <form>
+        <form onSubmit={submitForm}>
             <label htmlFor='name'>Name</label>
             <input id='name'
                 type='text'
@@ -27,6 +31,7 @@ function Form() {
                 type='text'
                 onChange={handleChange}
                 value={teamMember.name} />
+            <button type='submit'>Add Team Member</button>
         </form>
     );
 }
